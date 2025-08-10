@@ -10,10 +10,19 @@ collections:
     label: "Pages"
     files:
       - label: "Accueil"
-        name: "index"
-        file: "index.html"
+        name: "home"
+        file: "content/pages/home.md"
         fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Hero image", name: "hero_image", widget: "image"}
           - {label: "Contenu", name: "body", widget: "markdown"}
+      - label: "Contact"
+        name: "contact"
+        file: "content/pages/contact.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
+
   - name: "portfolio"
     label: "Portfolio"
     folder: "content/portfolio"
@@ -21,5 +30,41 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Catégorie", name: "category", widget: "string"}
+      - {label: "Image principale", name: "image", widget: "image"}
+      - {label: "Galerie", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - {label: "Description", name: "body", widget: "markdown"}
+
+  - name: "carnets"
+    label: "Carnets"
+    folder: "content/carnets"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+
+  - name: "events"
+    label: "Événements"
+    folder: "content/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Affiche", name: "image", widget: "image"}
+      - {label: "Description", name: "body", widget: "markdown"}
+
+  - name: "boutique"
+    label: "Boutique"
+    folder: "content/boutique"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Prix", name: "price", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Description", name: "body", widget: "markdown"}
